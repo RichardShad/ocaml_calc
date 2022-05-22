@@ -1,7 +1,7 @@
 (executable
  (public_name ocaml_calc)
  (name main)
- (libraries ocaml_calc))
+ (libraries ocaml_calc zarith))
 
 (ocamllex lexer)
 

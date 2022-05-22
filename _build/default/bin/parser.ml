@@ -16,7 +16,7 @@ module MenhirBasics = struct
     | LPARAN
     | INT of (
 # 13 "bin/parser.mly"
-       (int)
+       (Big_int_Z.big_int)
 # 21 "bin/parser.ml"
   )
     | FLOAT of (

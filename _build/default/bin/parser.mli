@@ -8,7 +8,7 @@ type token =
   | PLUS
   | MINUS
   | LPARAN
-  | INT of (int)
+  | INT of (Big_int_Z.big_int)
   | FLOAT of (float)
   | EOF
 

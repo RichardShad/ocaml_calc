@@ -1,3 +1,5 @@
+open Big_int_Z
+
 exception SyntaxError of string
 
 type binop =
@@ -7,7 +9,7 @@ type binop =
   | Div
 
 type expr =
-  | Int of int
+  | Int of big_int
   | Float of float
   | Op of binop * expr * expr
 
@@ -18,5 +20,5 @@ in aux
 
 let rec string_of_expr = function
 | Op (op, e1, e2) -> string_of_expr e1 ^ (match op with |Add -> " + " |Sub -> " - " |Mult -> " * " |Div -> " / ") ^ string_of_expr e2
-| Int i -> string_of_int i
+| Int i -> string_of_big_int i
 | Float f -> string_of_float f

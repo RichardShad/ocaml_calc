@@ -10,7 +10,7 @@
 %token MINUS
 %token SLASH
 
-%token <int> INT
+%token <Big_int_Z.big_int> INT
 %token <float> FLOAT
 
 %token EOF

@@ -1,5 +1,6 @@
 {
     open Parser
+    open Big_int_Z
 }
 
 let white = [' ' '\t']
@@ -10,7 +11,7 @@ let float = int '.' digit+
 rule read = 
     parse 
     | white { read lexbuf }
-    | int as i { INT (int_of_string i) }
+    | int as i { INT (big_int_of_string i) }
     | float as f { FLOAT (float_of_string f) }
     | "(" { LPARAN }
     | ")" { RPARAN }

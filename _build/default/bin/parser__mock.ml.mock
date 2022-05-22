@@ -8,7 +8,7 @@ type token =
   | LPARAN
   | INT of (
 # 13 "bin/parser.mly"
-       (int)
+       (Big_int_Z.big_int)
 # 13 "bin/parser__mock.ml.mock"
 )
   | FLOAT of (
@@ -60,7 +60,7 @@ and (xv_terminal, xv_subexpr, xv_prog, xv_operation, xv_expr, xv_err) =
 # 61 "bin/parser__mock.ml.mock"
    : (
 # 13 "bin/parser.mly"
-       (int)
+       (Big_int_Z.big_int)
 # 65 "bin/parser__mock.ml.mock"
   )) (_startpos_i_ : Lexing.position) (_endpos_i_ : Lexing.position) (_startofs_i_ : int) (_endofs_i_ : int) (_loc_i_ : Lexing.position * Lexing.position) ->
     (

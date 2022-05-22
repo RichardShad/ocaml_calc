@@ -1,8 +1,9 @@
 # 1 "bin/lexer.mll"
  
     open Parser
+    open Big_int_Z
 
-# 6 "bin/lexer.ml"
+# 7 "bin/lexer.ml"
 let __ocaml_lex_tables = {
   Lexing.lex_base =
    "\000\000\246\255\247\255\249\255\250\255\251\255\252\255\012\000\
@@ -110,64 +111,64 @@ let rec read lexbuf =
 and __ocaml_lex_read_rec lexbuf __ocaml_lex_state =
   match Lexing.engine __ocaml_lex_tables __ocaml_lex_state lexbuf with
       | 0 ->
-# 12 "bin/lexer.mll"
+# 13 "bin/lexer.mll"
             ( read lexbuf )
-# 116 "bin/lexer.ml"
+# 117 "bin/lexer.ml"
 
   | 1 ->
 let
-# 13 "bin/lexer.mll"
+# 14 "bin/lexer.mll"
              i
-# 122 "bin/lexer.ml"
+# 123 "bin/lexer.ml"
 = Lexing.sub_lexeme lexbuf lexbuf.Lexing.lex_start_pos lexbuf.Lexing.lex_curr_pos in
-# 13 "bin/lexer.mll"
-               ( INT (int_of_string i) )
-# 126 "bin/lexer.ml"
+# 14 "bin/lexer.mll"
+               ( INT (big_int_of_string i) )
+# 127 "bin/lexer.ml"
 
   | 2 ->
 let
-# 14 "bin/lexer.mll"
+# 15 "bin/lexer.mll"
                f
-# 132 "bin/lexer.ml"
+# 133 "bin/lexer.ml"
 = Lexing.sub_lexeme lexbuf lexbuf.Lexing.lex_start_pos lexbuf.Lexing.lex_curr_pos in
-# 14 "bin/lexer.mll"
+# 15 "bin/lexer.mll"
                  ( FLOAT (float_of_string f) )
-# 136 "bin/lexer.ml"
+# 137 "bin/lexer.ml"
 
   | 3 ->
-# 15 "bin/lexer.mll"
+# 16 "bin/lexer.mll"
           ( LPARAN )
-# 141 "bin/lexer.ml"
+# 142 "bin/lexer.ml"
 
   | 4 ->
-# 16 "bin/lexer.mll"
+# 17 "bin/lexer.mll"
           ( RPARAN )
-# 146 "bin/lexer.ml"
+# 147 "bin/lexer.ml"
 
   | 5 ->
-# 17 "bin/lexer.mll"
+# 18 "bin/lexer.mll"
           ( PLUS )
-# 151 "bin/lexer.ml"
+# 152 "bin/lexer.ml"
 
   | 6 ->
-# 18 "bin/lexer.mll"
+# 19 "bin/lexer.mll"
           ( STAR )
-# 156 "bin/lexer.ml"
+# 157 "bin/lexer.ml"
 
   | 7 ->
-# 19 "bin/lexer.mll"
+# 20 "bin/lexer.mll"
           ( MINUS )
-# 161 "bin/lexer.ml"
+# 162 "bin/lexer.ml"
 
   | 8 ->
-# 20 "bin/lexer.mll"
+# 21 "bin/lexer.mll"
           ( SLASH )
-# 166 "bin/lexer.ml"
+# 167 "bin/lexer.ml"
 
   | 9 ->
-# 21 "bin/lexer.mll"
+# 22 "bin/lexer.mll"
           ( EOF )
-# 171 "bin/lexer.ml"
+# 172 "bin/lexer.ml"
 
   | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf;
       __ocaml_lex_read_rec lexbuf __ocaml_lex_state

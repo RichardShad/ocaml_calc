@@ -5,7 +5,7 @@ type token =
   | PLUS
   | MINUS
   | LPARAN
-  | INT of int
+  | INT of Z.t
   | FLOAT of float
   | EOF
 val menhir_begin_marker : int
