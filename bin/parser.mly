@@ -36,12 +36,8 @@ let expr :=
     | e1 = expr; op = operation; e2 = expr; { Op (op, e1, e2) }
     | LPARAN; e = expr; RPARAN; { e }
     
-let subexpr :=
-    | terminal
-    | LPARAN; e = expr; RPARAN; { e }
-
 let err :=
-    | e1 = subexpr; e2 = expr;
+    | e1 = expr; e2 = expr;
         { raise (SyntaxError (Printf.sprintf "Expected operation between %s and %s!" (string_of_expr e1) (string_of_expr e2))) }
 
 let operation ==
