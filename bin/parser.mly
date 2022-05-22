@@ -23,6 +23,7 @@
 %%
 
 prog: 
+    | err; EOF { None }
     | expr; EOF { Some $1 }
     | EOF { None }
 
@@ -34,8 +35,7 @@ let expr :=
     | terminal
     | e1 = expr; op = operation; e2 = expr; { Op (op, e1, e2) }
     | LPARAN; e = expr; RPARAN; { e }
-    | err
-
+    
 let subexpr :=
     | terminal
     | LPARAN; e = expr; RPARAN; { e }
