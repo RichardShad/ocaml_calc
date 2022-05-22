@@ -1,0 +1,7 @@
+# dune build -x windows
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /home/fox/projects/ocaml/ocaml_calc
+# Auto-detected concurrency: 12
+$ /usr/bin/ocamlc.opt -config > /tmp/dune_02e761_output
+$ /home/fox/.opam/default/bin/ocamlfind printconf conf > /tmp/dune_b09b2d_output
